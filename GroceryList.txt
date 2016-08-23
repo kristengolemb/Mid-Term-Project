@@ -1,4 +1,4 @@
-Bananas		Produce		0.29
+Bananas		Produce		0.29	
 Orange 		Produce 	0.22
 potatoes	produce 	0.17
 Doritos	Salty Snacks	3.50
