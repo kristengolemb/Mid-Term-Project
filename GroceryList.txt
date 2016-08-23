@@ -1,0 +1,22 @@
+Bananas		Produce		0.29
+Orange 		Produce 	0.22
+potatoes	produce 	0.17
+Doritos	Salty Snacks	3.50
+Chex Mix	Salty Snacks	1.99
+Cheetos	Salty Snacks	2.99
+Milk	Dairy Products	2.99
+Cheese(Chedder)	Dairy Products	2.79
+Yogurt(Plain)	Dairy Products	0.99
+Froot Loops	Cereal		3.99
+Lucky Charms	Cereal		3.79
+Raisin Bran	Cereal		2.99
+Ground Turkey	Meat		7.99
+Chicken	5.99
+Steaks	10.99
+
+
+
+
+
+
+
