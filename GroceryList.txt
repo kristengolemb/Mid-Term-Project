@@ -1,36 +1,15 @@
 Bananas	Produce	0.29	Chiquita Bananas.
-
 Orange 	Produce 	0.22	Tastie fruit.
-
 potatoes	produce 	0.17	Idaho potatoes.
- 
 Doritos	Salty Snacks	3.49	Doritos is a brand of seasoned tortilla chips produced since 1964 by American food company Frito-Lay.
-
 Chex Mix	Salty Snacks	1.99	The snack that is always interesting.
-
 Cheetos	Salty Snacks	2.99	Cheetos snacks are the much-loved cheesy treats that are fun for everyone.
-
 Milk	Dairy Products	2.99	Dairy Pure milk brand.
-
 Cheese(Chedder)	Dairy Products	2.79	Made by kraft cheese.
-
 Yogurt(Plain)	Dairy Products	0.99	Made by Dannon.
-
 Froot Loops	Cereal	3.99	Follow your nose to the delicious fruity taste and fun, colorful loops of Froot Loops cereal.
-
 Lucky Charms	Cereal	3.79	Lucky Charms is a brand of cereal produced by the General Mills food company since 1964.
-
 Raisin Bran	Cereal	2.99	The classic, delicious balance of crispy, wheat bran flakes with delectably sweet raisins never ceases to make morning amazing.
-
 Ground Turkey	Meat	7.99	Jennie-O Brand.
-
 Chicken		Meat	5.99	Boneless skinless chicken breasts.
-
 Steaks		Meat	10.99	New York Strips.
-
-
-
-
-
-
-
