@@ -1,11 +1,26 @@
+import java.util.Scanner;
 
 public class POSTerminal {
 
 	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
 //		"Welcome message"
+		System.out.println("Welcome to Costco, I love you.\n");
+		System.out.println("1.) List of Products");
+		System.out.println("2.) My Cart");
+		System.out.println("3.) Checkout");
 //		present short list of options       1.) menu
 //											2.) see cart
 //											3.) checkout
+		int i = 0;
+		switch (i){
+		case 1 = ;
+		
+//		case 2 = ;
+//		
+//		case 3 = ;
+		
+		}
 //
 //		1.) menu - list available items  1 - apples
 //										 2 - bananas
@@ -33,6 +48,7 @@ public class POSTerminal {
 //	"Thank you message"
 		 
 		
+		scan.close();
 	}
 
 }
