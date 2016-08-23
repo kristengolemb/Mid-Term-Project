@@ -15,7 +15,7 @@ public class ProductsTextFile {
 
 	public void addProducts(String addition) throws IOException {
 		System.out.println(addition);
-		Path productsPath = Paths.get("products.txt");
+		Path productsPath = Paths.get("products.txt");  //this will need to match the text file Rob created
 		File productsFile = productsPath.toFile();
 		FileWriter out = new FileWriter(productsFile, true);
 		PrintWriter outzoom = new PrintWriter(out);
