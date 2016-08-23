@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 
 public class Product {
 	private String name;
@@ -12,9 +13,18 @@ public class Product {
 		this.setDescription(description);
 	}
 
-	public Product(String name, String category, String price){
+	public Product(String name, String category, String price, String description){
 		this.name = name;
 		this.category = category;
+		this.price = Double.parseDouble(price);
+		this.setDescription(description);
+	}
+	
+	public Product(String name, String category, String price){
+//		DecimalFormat df = new DecimalFormat("#.00");
+		this.name = name;
+		this.category = category;
+//		this.price = Double.parseDouble(df.format(price));
 		this.price = Double.parseDouble(price);
 	}
 	
