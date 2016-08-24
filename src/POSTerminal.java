@@ -72,6 +72,8 @@ public class POSTerminal {
 			// MyCart = cart.addToMyCartList(prod, prod.getQuantity());
 			System.out.println("Your cart contains: ");
 			cart.displayMyCartList(MyCartList);
+			System.out.println("Your subtotal: $" + cart.getSubtotal(MyCartList));
+		
 			// list all products, quantities, totals in current cart
 			// have input for escaping / moving to checkout
 		}
