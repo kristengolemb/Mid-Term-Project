@@ -7,7 +7,9 @@ public class POSTerminal {
 	// double finalTotal = 0;
 	// final double SALESTAX = 0.06;
 
-	public static void main(String[] args) throws IOException {
+	
+	
+	public static void main(String[] args) {
 		InputValidator validate = new InputValidator();
 		Scanner scan = new Scanner(System.in);
 
@@ -21,7 +23,7 @@ public class POSTerminal {
 						+ "\n 2 - Add to cart" 
 						+ "\n 3 - See cart" 
 						+ "\n 4 - Checkout");
-
+		
 		int choice = Validator.isValidOption(scan);
 		ProductsTextFile listOfProducts = new ProductsTextFile();  //creates ArrayList of Products
 		Product prod = new Product();
@@ -34,6 +36,7 @@ public class POSTerminal {
 			System.out.println(listOfProducts.getProductList());
 			break;
 		}
+
 
 		case 2: { // make a purchase
 					// ask for item number
@@ -72,4 +75,7 @@ public class POSTerminal {
 
 		}
 	}
+		
+		
+	
 }
