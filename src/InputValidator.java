@@ -88,7 +88,7 @@ public class InputValidator {
         while (isValid == false)
         {
             d = getDouble(sc, prompt);
-            if (d <= min)
+            if (d < min)
                 System.out.println(
                     "Error! Number must be greater than " + min + ".");
             else if (d >= max)
@@ -98,5 +98,19 @@ public class InputValidator {
                 isValid = true;
         }
         return d;
-    }
-}
+   }
+        public static String isValidCreditCardNumber(Scanner scan, String prompt) {
+        	System.out.println(prompt);
+    		int cardNumber = getInt(scan, "");
+    		int length = (int) Math.log10(cardNumber) + 1;
+    		String lastFourDigits = "";
+    		if (length == 16) {
+    			lastFourDigits = new Integer(cardNumber).toString(14, 17);
+    			// take cardNumber and parse out last 4 digits
+    			// return last 4 digits
+    		} else
+    			System.out.println("That's not a valid card number.");
+    		return lastFourDigits;
+    	}
+
+ }

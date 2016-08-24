@@ -3,11 +3,8 @@ import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Payments {
-	public static void main(String[] args) {
-		Payments payment = new Payments();
-		String result = payment.paymentMethod("cash");
+	public Payments() {
 		
-		System.out.println(result);
 		
 	}
 	Scanner scan = new Scanner(System.in);
@@ -27,35 +24,26 @@ public class Payments {
 			if (returnChange < 0){
 				grandTotal = 0 - returnChange;
 				System.out.println("You owe " + grandTotal);
-			 
-				
 			}
 			else {
 				System.out.println("Your change is $" + returnChange);
 			}
 			//change = new BigDecimal(returnChange);
 			//change = change.setScale(2, RoundingMode.HALF_UP);
-			
-		
-		
-	
-	
-		//return "$" + change;
+			//return "$" + change;
 	}
 	
-	public void paymentCredit(int payment){
+	public void paymentCredit(double grandTotal){
 		
-		if (payment.equalsIgnoreCase("credit card")) {
-			System.out.println("Please enter your 16-digit card number.");
-			int creditCardNumber = scan.nextInt();
-			
+		String lastFourDigits = valid.isValidCreditCardNumber(scan, "Please enter your 16-digit card number.");
+		System.out.println("Your card " + lastFourDigits + " has been charged ");
 		System.out.println("Credit Card payment for " + grandTotal + "has been received. ");
 			//validate that it's 16 digits
 			//take expiration and cvv
 			//later, return last 4 digits
 			//validCard = line.substring (14, 17);
 			//System.out.println("Your card ending in " + validCard + " has been charged.")
-		}
+		
 	}
 	public void paymentCheck(int payment){
 		if (payment.equalsIgnoreCase("check")) {
