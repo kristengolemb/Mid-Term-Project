@@ -88,7 +88,7 @@ public class InputValidator {
         while (isValid == false)
         {
             d = getDouble(sc, prompt);
-            if (d <= min)
+            if (d < min)
                 System.out.println(
                     "Error! Number must be greater than " + min + ".");
             else if (d >= max)

@@ -10,6 +10,7 @@ public class POSTerminal {
 	public static void main(String[] args) {
 		InputValidator validate = new InputValidator();
 		Scanner scan = new Scanner(System.in);
+		Payments payment = new Payments();
 		
 		ProductsTextFile listOfProducts = new ProductsTextFile();	// creates
 																	// ArrayList
@@ -70,7 +71,17 @@ public class POSTerminal {
 		case 4: {
 			System.out.println("\nHow would you like to pay?" + "\n 1 - Cash" + "\n 2 - Credit Card"
 					+ "\n 3 - Check\n" + "4 - Go Back\n");
-			int quantity = validate.getInt(scan, "Enter a Number: ", 1, 4);
+			int choice2 = validate.getInt(scan, "Enter a Number: ", 1, 4);
+			switch(choice2){
+			case 1 :
+				
+//			case 2 : 
+//			
+//			case 3 : 
+//				
+//			case 4 : 
+				
+			}
 		 }
 
 		}
