@@ -14,7 +14,7 @@ public class Payments {
 	
 	//double grandTotal = 15.93;
 	
-	public void paymentMethod(double grandTotal) {
+	public void paymentCash(double grandTotal) {
 	BigDecimal change = null;
 	
 			//System.out.print("Please enter the amount to pay.");
