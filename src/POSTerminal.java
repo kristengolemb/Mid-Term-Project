@@ -10,6 +10,7 @@ public class POSTerminal {
 	public static void main(String[] args) {
 		InputValidator validate = new InputValidator();
 		Scanner scan = new Scanner(System.in);
+		Payments payment = new Payments();
 		
 		ProductsTextFile listOfProducts = new ProductsTextFile();	// creates
 																	// ArrayList
@@ -44,12 +45,10 @@ public class POSTerminal {
 					// ask for item number
 			String response;
 			do {
-//			int productChoice = scan.nextInt();
 			int productChoice = validate.getInt(scan, "Enter a product number: ", 1, 15) - 1;
 			prod = listOfProducts.getProduct(productChoice);
 			System.out.println(prod);
 			
-//			int quantity = scan.nextInt();
 			int quantity = validate.getInt(scan, "How many would you like? (Max 100): ", 0, 100);
 			prod.setQuantity(quantity);
 			
@@ -62,31 +61,28 @@ public class POSTerminal {
 			System.out.print("\nWould you like to buy something else?");
 			response = scan.nextLine();
 			} while (response.equals("yes"));
-			// cart.displayMyCartList(MyCart);
-
-			// "Would like to add another product?"
-
-			// store purchased items in an array list
 		}
-
-		case 3: {// see cart
-			// MyCart cart = new MyCart(prod.getName(), prod.getPrice(),
-			// prod.getQuantity());
-			// MyCart = cart.addToMyCartList(prod, prod.getQuantity());
+			//see cart
+		case 3: {
 			System.out.println("Your cart contains: ");
 			cart.displayMyCartList(MyCartList);
 			System.out.println("Your subtotal: $" + cart.getSubtotal(MyCartList));
-		
-			// list all products, quantities, totals in current cart
-			// have input for escaping / moving to checkout
 		}
-		// case 4: {
-		// System.out.println("How would you like to pay? Please enter cash,
-		// card, or check.");
-		// String paymentMethod = Validator.isValidPaymentMethod(scan);
-		// }
-		// switch statement or if/if else/else statement for payment types
-		// appropriate methods based on payment selection
+		case 4: {
+			System.out.println("\nHow would you like to pay?" + "\n 1 - Cash" + "\n 2 - Credit Card"
+					+ "\n 3 - Check\n" + "4 - Go Back\n");
+			int choice2 = validate.getInt(scan, "Enter a Number: ", 1, 4);
+			switch(choice2){
+			case 1 :
+				
+//			case 2 : 
+//			
+//			case 3 : 
+//				
+//			case 4 : 
+				
+			}
+		 }
 
 		}
 	} while (valid);
