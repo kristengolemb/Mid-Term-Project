@@ -10,6 +10,7 @@ public class POSTerminal {
 	public static void main(String[] args) {
 		InputValidator validate = new InputValidator();
 		Scanner scan = new Scanner(System.in);
+		
 		ProductsTextFile listOfProducts = new ProductsTextFile();	// creates
 																	// ArrayList
 																	// of
@@ -35,7 +36,7 @@ public class POSTerminal {
 		switch (choice) {
 		case 1: {
 
-			System.out.println(listOfProducts.getProductList());
+			listOfProducts.displayProductList(listOfProducts.getProductList());
 			break;
 		}
 
@@ -51,8 +52,10 @@ public class POSTerminal {
 //			int quantity = scan.nextInt();
 			int quantity = validate.getInt(scan, "How many would you like? (Max 100): ", 0, 100);
 			prod.setQuantity(quantity);
-
-			MyCartList = cart.addToMyCartList(prod, prod.getQuantity());
+			
+			if (quantity > 0){
+				MyCartList = cart.addToMyCartList(prod, prod.getQuantity());
+			}
 			
 			System.out.println("\nYour cart contains: ");
 			cart.displayMyCartList(MyCartList);

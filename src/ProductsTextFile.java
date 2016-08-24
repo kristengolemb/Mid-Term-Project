@@ -12,7 +12,8 @@ public class ProductsTextFile {
 //	ArrayList<String> productsList = new ArrayList<String>();
 	ArrayList<Product> productList = new ArrayList<Product> ();
 
-	public ProductsTextFile() { getProductList();
+	public ProductsTextFile() { 
+//		getProductList();
 	}
 
 	public void addProducts(String addition) throws IOException {
@@ -82,8 +83,10 @@ public class ProductsTextFile {
 	 * @param product
 	 */
 	public void displayProductList(ArrayList<Product> product){
+		int i = 1;
 		for (Product p: product) {
-			System.out.println(p);//implicit call to toString(); //name, category, price
+			System.out.println(i + " - " + p);//implicit call to toString(); //name, category, price
+			i++;
 		}
 	}
 
