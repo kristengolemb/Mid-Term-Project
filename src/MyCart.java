@@ -31,7 +31,8 @@ public class MyCart {
 	
 	public void displayMyCartList (ArrayList<Product> ALProduct){
 		for (Product p: ALProduct) {
-			System.out.println(p.getName() + "\t$" + p.getPrice() + " X " + p.getQuantity() + " = $" + p.getLineTotal());//implicit call to toString(); //name, category, price
+			System.out.println(p.getName() + "\t$" + p.getPrice() + " X " + p.getQuantity() + " = $" + p.getLineTotal().toString());
+			//implicit call to toString(); //name, category, price
 		}
 	}
 

@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 public class Product {
@@ -6,7 +8,7 @@ public class Product {
 	private double price;
 	private String description;
 	private int quantity;
-	private double lineTotal;
+	private BigDecimal lineTotal;
 	
 
 	public Product(String name, String category, double price, String description){
@@ -85,8 +87,12 @@ public class Product {
 	/**
 	 * @return the lineTotal
 	 */
-	public double getLineTotal() {
-		return lineTotal = getPrice()*getQuantity();
+	public BigDecimal getLineTotal() {
+		lineTotal = new BigDecimal(getQuantity());
+		lineTotal = lineTotal.multiply(new BigDecimal (getPrice()));
+		lineTotal = lineTotal.setScale(2, RoundingMode.HALF_UP);
+		
+		return lineTotal;
 	}
 
 	public String toString() {
