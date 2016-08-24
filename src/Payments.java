@@ -45,12 +45,14 @@ public class Payments {
 			//System.out.println("Your card ending in " + validCard + " has been charged.")
 		
 	}
-	public void paymentCheck(int payment){
-		if (payment.equalsIgnoreCase("check")) {
-			System.out.println("Please enter the check number.");
-			int checkPayment = scan.nextInt();
-			System.out.println("Thanks. Your payment with check " 
-			+ checkPayment + " has been received.");
+	public void paymentCheck(double grandTotal){
+	String routingNumber = valid.isValidRoutingNumber(scan, "Please enter your routing number.");
+	
+	String checknumber = valid.isValidCheckNumber(scan, "Please enter your check number.");
+	
+	String accountNumber = valid.isValidAccountNumber(scan, "Please enter your account number.");		
 		}
+//	System.out.println("Thanks. Your payment with check " 
+//			+ checkNumber + " has been received.");
+		
 	}
-}
