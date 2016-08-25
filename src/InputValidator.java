@@ -16,11 +16,7 @@ public class InputValidator {
 		return s;
 	}
 
-	public static int getInt(Scanner sc, String prompt) // prompt used to output
-														// a literal String as a
-														// message. (i.e. "Enter
-														// an integer: ")
-	{
+	public static int getInt(Scanner sc, String prompt) {
 		int i = 0;
 		boolean isValid = false;
 		while (isValid == false) {
@@ -36,19 +32,7 @@ public class InputValidator {
 		return i;
 	}
 
-	public static int getInt(Scanner sc, String prompt, int min, int max) // int
-																			// min/max
-																			// are
-																			// decided
-																			// when
-																			// calling
-																			// the
-																			// method
-																			// based
-																			// on
-																			// context
-																			// need
-	{
+	public static int getInt(Scanner sc, String prompt, int min, int max) {
 		int i = 0;
 		boolean isValid = false;
 		while (isValid == false) {
