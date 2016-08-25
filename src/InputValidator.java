@@ -78,24 +78,77 @@ public class InputValidator {
 		}
 		return d;
 	}
+	
+	public static long getLong(Scanner sc, String prompt) {
+		long l = 0;
+		boolean isValid = false;
+		while (isValid == false) {
+			System.out.print(prompt);
+			if (sc.hasNextLong()) {
+				l = sc.nextLong();
+				isValid = true;
+			} else {
+				System.out.println("Error! Invalid long value. Try again.");
+			}
+			sc.nextLine(); // discard any other data entered on the line
+		}
+		return l;
+	}
 
 	public static String isValidCreditCardNumber(Scanner scan, String prompt) {
-		System.out.println(prompt);
-		int cardNumber = getInt(scan, "");
-		int length = (int) Math.log10(cardNumber) + 1;
 		String lastFourDigits = "";
-		if (length == 16) {
-			lastFourDigits = new Integer(cardNumber).toString(14, 17);
-			// take cardNumber and parse out last 4 digits
-			// return last 4 digits
-		} else
-			System.out.println("That's not a valid card number.");
+		boolean condition = true;
+		while (condition) {
+			System.out.println(prompt);
+			long cardNumber = getLong(scan, "");
+			int length = String.valueOf(cardNumber).length();
+			if (length == 16) {
+				lastFourDigits = new Long(cardNumber).toString(12, 15);
+				// take cardNumber and parse out last 4 digits
+				// return last 4 digits
+				condition = false;
+			} else
+				System.out.println("That's not a valid card number. Try again.");
+		}
 		return lastFourDigits;
+	}
+	
+	public static void isValidCreditCardDate(Scanner scan, String prompt) {
+//		String lastFourDigits = "";
+		boolean condition = true;
+		while (condition) {
+			System.out.println(prompt);
+			long cardNumber = getLong(scan, "");
+			int length = String.valueOf(cardNumber).length();
+			if (length == 4) {
+//				lastFourDigits = new Long(cardNumber).toString(14, 17);
+				// take cardNumber and parse out last 4 digits
+				// return last 4 digits
+				condition = false;
+			} else
+				System.out.println("That's not a valid expiration date. Try again.");
+		}
+	}
+	
+	public static void isValidCreditCardCVV(Scanner scan, String prompt) {
+//		String lastFourDigits = "";
+		boolean condition = true;
+		while (condition) {
+			System.out.println(prompt);
+			long cardNumber = getLong(scan, "");
+			int length = String.valueOf(cardNumber).length();
+			if (length == 3) {
+//				lastFourDigits = new Integer(cardNumber).toString(14, 17);
+				// take cardNumber and parse out last 4 digits
+				// return last 4 digits
+				condition = false;
+			} else
+				System.out.println("That's not a valid CVV number. Try again.");
+		}
 	}
 
 	public static String isValidRoutingNumber (Scanner scan, String prompt) {
 		System.out.println(prompt);
-		System.out.println("Please enter routing number.");
 	String routingNumber = scan.nextLine();
 	if(routingNumber.length()<9||routingNumber.length()>9)
 		System.out.println("Invalid routing number.");
@@ -104,7 +157,6 @@ public class InputValidator {
 
 	public static String isValidCheckNumber(Scanner scan, String prompt) {
 		System.out.println(prompt);
-		System.out.println("Please enter check number: ");
 		String checkNumber = scan.nextLine();
 		if (checkNumber.length() < 4 || checkNumber.length() > 4)
 			System.out.println("Invalid check number.");
