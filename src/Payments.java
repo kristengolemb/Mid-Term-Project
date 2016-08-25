@@ -36,11 +36,15 @@ public String paymentCash(double grandTotal) {
 		return "Tendered cash: $" + cashPayment + "\nChange: $" + returnChange.doubleValue() + "\n";
 	}
 	
-	public void paymentCredit(double grandTotal){
+	public String paymentCredit(double grandTotal){
 		
 		String lastFourDigits = valid.isValidCreditCardNumber(scan, "Please enter your 16-digit card number.");
-		System.out.println("Your card " + lastFourDigits + " has been charged ");
-		System.out.println("Credit Card payment for " + grandTotal + "has been received. ");
+		valid.isValidCreditCardDate(scan, "Please enter your 4-digit expiration date.");
+		valid.isValidCreditCardCVV(scan, "Please enter your 3-digit CVV number.");
+//		System.out.println("Your card " + lastFourDigits + " has been charged ");
+//		System.out.println("Credit Card payment for " + grandTotal + "has been received. ");
+		
+		return lastFourDigits;
 			//validate that it's 16 digits
 			//take expiration and cvv
 			//later, return last 4 digits
@@ -48,12 +52,15 @@ public String paymentCash(double grandTotal) {
 			//System.out.println("Your card ending in " + validCard + " has been charged.")
 		
 	}
-	public void paymentCheck(double grandTotal){
-	String routingNumber = valid.isValidRoutingNumber(scan, "Please enter your routing number.");
+	public String paymentCheck(double grandTotal){
+	String routingNumber = valid.isValidRoutingNumber(scan, "Please enter your 9-digit routing number");
 	
-	String checknumber = valid.isValidCheckNumber(scan, "Please enter your check number.");
+	String accountNumber = valid.isValidAccountNumber(scan, "Please enter your 14-digit account number.");
 	
-	String accountNumber = valid.isValidAccountNumber(scan, "Please enter your account number.");		
+	String checknumber = valid.isValidCheckNumber(scan, "Please enter your 4-digit check number.");
+	
+	
+	return checknumber;
 		}
 //	System.out.println("Thanks. Your payment with check " 
 //			+ checkNumber + " has been received.");
