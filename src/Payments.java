@@ -14,23 +14,26 @@ public class Payments {
 	
 	//double grandTotal = 15.93;
 	
-	public void paymentCash(double grandTotal) {
-	BigDecimal change = null;
-	
-			//System.out.print("Please enter the amount to pay.");
-			//cashPayment = scan.nextDouble();
-			cashPayment = valid.getDouble(scan, "Please enter payment amount: $", 0, 10000);
-			double returnChange = cashPayment - grandTotal;
-			if (returnChange < 0){
-				grandTotal = 0 - returnChange;
+public String paymentCash(double grandTotal) {
+		
+		cashPayment = valid.getDouble(scan, "Please enter payment amount: $", 0, 10000);
+		BigDecimal returnChange = new BigDecimal (cashPayment - grandTotal);
+		returnChange = returnChange.setScale(2,  RoundingMode.HALF_UP);
+		
+		boolean condition = false;
+		while (!condition) {
+			if (returnChange.doubleValue() < 0) {
+				grandTotal = 0 - returnChange.doubleValue();
 				System.out.println("You owe " + grandTotal);
+				cashPayment = valid.getDouble(scan, "Please tender more cash: $", 0, 10000);
+				returnChange = new BigDecimal (cashPayment - grandTotal);
+				returnChange = returnChange.setScale(2,  RoundingMode.HALF_UP);
+			} else{
+				condition = true;
 			}
-			else {
-				System.out.println("Your change is $" + returnChange);
-			}
-			//change = new BigDecimal(returnChange);
-			//change = change.setScale(2, RoundingMode.HALF_UP);
-			//return "$" + change;
+		}
+		
+		return "Tendered cash: $" + cashPayment + "\nChange: $" + returnChange.doubleValue() + "\n";
 	}
 	
 	public void paymentCredit(double grandTotal){
